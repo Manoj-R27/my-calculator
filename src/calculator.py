@@ -11,7 +11,7 @@ def subtract(a, b):
     """Subtract b from a"""
     return a - b
 
-def multiply(a, b):
+## def multiply(a, b):
     """Multiply two numbers with input validation and logging."""
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
         raise TypeError("Both arguments must be numbers")
@@ -19,9 +19,9 @@ def multiply(a, b):
     print(f"Multiplying {a} × {b}")  # Added logging
     result = a * b
     print(f"Result: {result}")
-    return result
+    return result##
 
-def divide(a, b):
+##def divide(a, b):
     """Divide a by b with enhanced error handling."""
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
         raise TypeError("Division requires numeric inputs")
@@ -31,11 +31,26 @@ def divide(a, b):
     print(f"Dividing {a} ÷ {b}")  # Added logging
     result = a / b
     print(f"Result: {result}")
-    return result
-
+    return result ##
 # TODO: Students will add multiply, divide, power, sqrt functions
+
+def multiply(a, b):
+    """Multiply two numbers with input validation."""
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both arguments must be numbers")
+    return a * b
+
+def divide(a, b):
+    """Divide a by b with input validation and error handling."""
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Division requires numeric inputs")
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
 
 if __name__ == "__main__":
     print("🧮 Calculator Module")
     print(f"2 + 3 = {add(2, 3)}")
     print(f"5 - 2 = {subtract(5, 2)}")
+    print(f"3 × 4 = {multiply(3, 4)}")
+    print(f"10 ÷ 2 = {divide(10, 2)}")
